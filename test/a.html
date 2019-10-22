@@ -7,7 +7,18 @@
 </head>
 
 <body>
+    <a href="#" target="_blank" onclick="runTest()"></a>
     <script>
+        function runTest() {
+            var win = window.open("https://github.com/login/oauth/authorize?client_id=d7588e3cd168637a9dc8&login=fightingcat");
+
+            window.addEventListener('message', function (event) {
+                console.log("response: ", event.data);
+            });
+            setInterval(function () {
+                win.postMessage(location.origin, "https://fightingcat.github.io");
+            }, 1000);
+        }
     </script>
 </body>
 

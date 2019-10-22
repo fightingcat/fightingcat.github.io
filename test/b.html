@@ -8,6 +8,10 @@
 
 <body>
     <script>
+        window.addEventListener('message', function (event) {
+            console.log("ping from: ", event.data);
+            event.source.postMessage(location.search, event.data);
+        });
     </script>
 </body>
 
