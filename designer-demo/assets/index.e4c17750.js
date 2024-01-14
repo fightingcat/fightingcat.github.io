@@ -21692,13 +21692,13 @@ function Workspace() {
   react.exports.useEffect(() => {
     function loadBaseImage(name) {
       return __async(this, null, function* () {
-        const file = yield (yield fetch("/assets/" + name)).blob();
+        const file = yield (yield fetch("./assets/" + name)).blob();
         assets.baseImages.add(file, name);
       });
     }
     function loadMatImage(name) {
       return __async(this, null, function* () {
-        const file = yield (yield fetch("/assets/" + name)).blob();
+        const file = yield (yield fetch("./assets/" + name)).blob();
         assets.matImages.add(file, name);
       });
     }
